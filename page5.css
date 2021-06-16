@@ -1,0 +1,140 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'HSSummer';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSSummer.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+html{
+	font-family:Noto Sans KR ;
+}
+body{
+	margin: 0; 
+	padding: 0;
+	background-color: #feb9b4;
+	width: 100vw;}
+h1{
+	font-size: 10em;
+	font-family: HSSummer;
+	color: #52007e;
+	word-break: keep-all;
+	line-height: 0;
+	margin-top: 0;
+}
+.container{
+	position: relative;
+	margin-top: 500px;
+	padding: 30px;
+}
+.item{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.fin_img{
+	width: 1000px;
+
+}
+.shadow{
+		filter: drop-shadow(1px 1px 1px #52007e);
+
+}
+.text_point{
+	color: #ff4095;
+}
+
+h2{
+	font-size: 3em;
+	font-family: GmarketSansLight;
+	color: #300144;
+	text-align: center;
+	word-break: keep-all;
+	line-height: 1.5em;
+}
+.confetti{
+	width: 200px;
+	position: absolute;
+	animation-name: confetti;
+	animation-duration: 5s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+@keyframes confetti{
+	from{top: 2000px; opacity: 0;}
+	50%{opacity: 1;}
+	to{top: -2000px; opacity:;}
+}
+#conf1{animation-delay: 2s; left: 20vw; filter: drop-shadow(13px 13px 5px #feb9b4);}
+#conf2{animation-delay: 0s; left: 30vw;filter: drop-shadow(10px 10px 10px #feb9b4)}
+#conf3{animation-delay: 1s; left: 60vw;filter: drop-shadow(14px 14px 20px #feb9b4)}
+#conf4{animation-delay: 0.4s; left: 70vw;filter: drop-shadow(20px 20px 30px #feb9b4)}
+#conf5{animation-delay: 2.2s; left: 80vw;filter: drop-shadow(10px 10px 10px #feb9b4)}
+#conf6{animation-delay: 5s; left: 34vw;filter: drop-shadow(50px 50px 60px #feb9b4)}
+#conf7{animation-delay: 4.2s; left: 22vw;filter: drop-shadow(32px 43px 43px #feb9b4)}
+
+h3{
+	font-family:GmarketSansLight ;
+	font-size: 2em;
+	background-color: #52007e;
+	color: floralwhite;
+	text-align: center;
+	margin: auto;
+	margin-top: 300px;
+	width: 800px;
+	padding: 30px;
+	transform: rotate(10deg);
+}
+.front_png{
+	position: absolute;
+	width: 100%;
+	backface-visibility: hidden;
+}
+.front_gif{
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	z-index: 1;
+	backface-visibility: hidden;
+}
+.front_gif:hover{
+	opacity: 1;
+}
+.back_png{
+	position: absolute;
+	width: 100%;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+	z-index: 2;
+}
+.flipper{
+	position: relative;
+	width: 500px;
+	filter: drop-shadow(1px 1px 1px #52007e);
+	perspective: 1000;
+	transition: transform 1s;
+  	-webkit-transform-style: preserve-3d}
+.front{
+	position: relative;
+	backface-visibility: hidden;
+
+}
+.back{
+	position: relative;
+	backface-visibility: hidden;
+
+}
+.flipper.is-flipped {
+	transform: rotateY(180deg);
+}
